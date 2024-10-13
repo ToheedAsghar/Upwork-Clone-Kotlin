@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:name="com.example.upworkclone.LoginActivity"
+    android:exported="true"
+    tools:ignore="WrongManifestParent">
+
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+
+    <application>
+        <activity
+            android:name=".userProfile"
+            android:exported="false" />
+        <activity
+            android:name=".Profile"
+            android:exported="false"
+            android:theme="@style/Theme.UpworkClone" />
+        <activity
+            android:name=".ui.login.activity_main"
+            android:exported="false"
+            android:label="@string/title_activity_main" />
+    </application>
+
+</manifest>
