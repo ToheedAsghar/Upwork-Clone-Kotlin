@@ -87,3 +87,4 @@
             android:layout_height="wrap_content"
             android:text="Skills: QA, Mobile App Testing" />
     </LinearLayout>
+</LinearLayout>

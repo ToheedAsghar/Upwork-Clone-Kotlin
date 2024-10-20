@@ -1,97 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:gravity="center"
-    android:background="#ffffff">
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
 
-    <ImageView
-        android:id="@+id/upwork_logo"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/white"
+                app:titleTextColor="@color/black">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/upwork_logo"
+                    android:layout_gravity="center"/>
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:navGraph="@navigation/mobile_navigation" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_nav_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/white"
+            app:menu="@menu/bottom_nav_menu" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/homepage_logo_background"
-        android:contentDescription="Upwork Logo"
-        android:layout_marginBottom="24dp" />
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_main"
+        app:menu="@menu/drawer_menu" />
 
-    <!-- Continue with Google Button -->
-    <Button
-        android:id="@+id/google_button"
-        android:layout_width="377dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/rounded_button"
-        android:backgroundTint="#4285F4"
-        android:text="Continue with Google"
-        android:textColor="#ffffff"
-        android:textStyle="bold" />
-
-    <!-- Name Fields -->
-    <EditText
-        android:id="@+id/first_name"
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="First name"
-        android:layout_marginBottom="8dp"
-        android:inputType="textPersonName"/>
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/last_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Last name"
-        android:layout_marginBottom="8dp"
-        android:inputType="textPersonName"/>
+        <!--button for opening settings activity-->
+        <Button
+            android:id="@+id/idBtnSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Settings"
+            android:textAllCaps="false" />
 
-    <!-- Email Field -->
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Email"
-        android:layout_marginBottom="8dp"
-        android:inputType="textEmailAddress"/>
+    </RelativeLayout>
 
-    <!-- Password Field -->
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Password (8 or more characters)"
-        android:layout_marginBottom="8dp"
-        android:inputType="textPassword"/>
 
-    <!-- Country Spinner -->
-    <Spinner
-        android:id="@+id/country_spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp" />
-
-    <!-- Checkbox for Emails -->
-    <CheckBox
-        android:id="@+id/check_emails"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Send me helpful emails to find rewarding work and job leads"
-        android:layout_marginBottom="16dp" />
-
-    <!-- Terms and Conditions Checkbox -->
-    <CheckBox
-        android:id="@+id/terms_conditions"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Yes, I understand and agree to the Upwork Terms of Service"
-        android:layout_marginBottom="24dp" />
-
-    <!-- Create Account Button -->
-    <Button
-        android:id="@+id/create_account"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Create my account"
-        android:backgroundTint="#4CAF50"
-        android:textColor="#ffffff" />
-
-</LinearLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

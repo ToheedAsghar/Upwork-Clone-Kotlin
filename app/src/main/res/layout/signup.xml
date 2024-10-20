@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    android:background="#ffffff">
+
+    <ImageView
+        android:id="@+id/upwork_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/homepage_logo_background"
+        android:contentDescription="Upwork Logo"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Continue with Google Button -->
+    <Button
+        android:id="@+id/google_button"
+        android:layout_width="377dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="#4285F4"
+        android:text="Continue with Google"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
+
+    <!-- Name Fields -->
+    <EditText
+        android:id="@+id/first_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="First name"
+        android:layout_marginBottom="8dp"
+        android:inputType="textPersonName"/>
+
+    <EditText
+        android:id="@+id/last_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Last name"
+        android:layout_marginBottom="8dp"
+        android:inputType="textPersonName"/>
+
+    <!-- Email Field -->
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:layout_marginBottom="8dp"
+        android:inputType="textEmailAddress"/>
+
+    <!-- Password Field -->
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password (8 or more characters)"
+        android:layout_marginBottom="8dp"
+        android:inputType="textPassword"/>
+
+    <!-- Country Spinner -->
+    <Spinner
+        android:id="@+id/country_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Checkbox for Emails -->
+    <CheckBox
+        android:id="@+id/check_emails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send me helpful emails to find rewarding work and job leads"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Terms and Conditions Checkbox -->
+    <CheckBox
+        android:id="@+id/terms_conditions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Yes, I understand and agree to the Upwork Terms of Service"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Create Account Button -->
+    <Button
+        android:id="@+id/create_account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create my account"
+        android:backgroundTint="#4CAF50"
+        android:textColor="#ffffff" />
+
+</LinearLayout>
